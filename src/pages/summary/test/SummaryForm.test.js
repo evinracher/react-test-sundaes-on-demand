@@ -29,7 +29,7 @@ test("popover response to hover", async () => {
   const termsAndConditions = screen.getByText(/terms and conditions/i);
   userEvent.hover(termsAndConditions);
   const popover = screen.getByText(/no ice cream will actually/i);
-  expect(popover).toBeInTheDocument(); // it is not necessary, but it is a best practice
+  expect(popover).toBeInTheDocument(); // it is not necessary, because we are querying it, but it is a best practice
 
   // popover disappears when mouse out
   userEvent.unhover(termsAndConditions);
