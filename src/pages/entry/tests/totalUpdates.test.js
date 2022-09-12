@@ -5,8 +5,9 @@ import Options from "../Options";
 
 test("update scoop subtotal when scoops change", async () => {
   render(<Options optionType="scoops" />, { wrapper: OrderDetailsProvider });
-  // make sure total starts out $0.00
+  // we can use exact option as false
   const scoopsSubtotal = screen.getByText(/scoops total/i);
+  // make sure total starts out $0.00
   expect(scoopsSubtotal).toHaveTextContent("0.00");
   // update vanilla scoops to 1 and check the subtotal (price $2 each)
   const vanillaInput = await screen.findByRole("spinbutton", {
