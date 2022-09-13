@@ -1,6 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Options from "./Options";
-import { formatCurrency, useOrderDetails } from "../../contexts/OrderDetails";
+import { useOrderDetails } from "../../contexts/OrderDetails";
+import { formatCurrency } from "../../utilities";
 
 export default function OrderEntry({ setOrderPhase }) {
   const [orderDetails] = useOrderDetails();
