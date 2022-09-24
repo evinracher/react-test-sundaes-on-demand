@@ -13,7 +13,7 @@ export default function ScoopOption({ name, imagePath, updateItemCount }) {
     const valueIsValid =
       0 <= currentValueFloat &&
       currentValueFloat <= 10 &&
-      Math.floor(currentValueFloat) === currentValueFloat;
+      Math.floor(currentValueFloat) === currentValueFloat; // validate that value is not float
 
     // validate
     setIsValid(valueIsValid);
