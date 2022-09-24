@@ -13,7 +13,7 @@ export default function OrderSummary({ setOrderPhase }) {
   ));
 
   // only display toppings if the toppings total is nonzero
-  const hasToppings = orderDetails.totals.toppings !== "$0.00";
+  const hasToppings = orderDetails.totals.toppings !== 0;
   let toppingsDisplay = null;
 
   if (hasToppings) {
