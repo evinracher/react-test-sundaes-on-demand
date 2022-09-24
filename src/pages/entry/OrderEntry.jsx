@@ -7,7 +7,7 @@ export default function OrderEntry({ setOrderPhase }) {
   const [orderDetails] = useOrderDetails();
 
   // disable order button if there aren't any scoops in order
-  const orderDisabled = orderDetails.totals.scoops === "$0.00";
+  const orderDisabled = orderDetails.totals.scoops === 0;
 
   return (
     <div>
