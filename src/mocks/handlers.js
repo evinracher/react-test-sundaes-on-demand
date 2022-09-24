@@ -36,7 +36,7 @@ export const handlers = [
   rest.post("http://localhost:3030/order", (_, res, ctx) => {
     return res(
       ctx.json({
-        orderNumber: Math.random() * 10000000,
+        orderNumber: 123456789,
       })
     );
   }),

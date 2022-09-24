@@ -13,7 +13,7 @@ test("order phases for happy path", async () => {
   // add ice cream scoops and toppings
   const grandTotal = screen.getByText(/grand total/i);
 
-  // adding 1 scoop of vanilla, 2$ each
+  // adding 1 scoop of vanilla, $2 each
   const vanillaInput = await screen.findByRole("spinbutton", {
     name: /vanilla/i,
   });
@@ -23,7 +23,7 @@ test("order phases for happy path", async () => {
   // check grand total
   expect(grandTotal).toHaveTextContent("2");
 
-  // adding 1 topping
+  // adding 1 topping, $1.5 each
   const checkboxes = await screen.findAllByRole("checkbox");
   const firstCheckbox = checkboxes[0];
   userEvent.click(firstCheckbox);
@@ -50,7 +50,9 @@ test("order phases for happy path", async () => {
   });
   userEvent.click(confirmOrderBtn);
   // confirm order number on confirmation page
-  const orderNumber = await screen.findByText(/your order number is/i);
+  const orderNumber = await screen.findByText(
+    /your order number is 123456789/i
+  );
   expect(orderNumber).toBeInTheDocument();
   // click new order button on confirmation page
   const newOrderBtn = screen.getByRole("button", {
